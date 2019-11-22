@@ -1,0 +1,40 @@
+Put following code between:
+
+ if (myGameArea.frameNo == 1 || everyinterval(150)) {
+
+    <code goes here>
+
+    }
+    for (i = 0; i < myObstacles.length; i += 1) {
+        myObstacles[i].x += -1;
+        myObstacles[i].update();
+    }
+
+
+#code:
+
+		 x = myGameArea.canvas.width;
+		 console.log("x = " + x);
+		 minHeight = 20;
+		 maxHeight = 200;
+		 hr = Math.random();
+		 console.log("random height number = " + hr);
+		 hr2 = (maxHeight-minHeight+1);
+		 console.log("maxheight = minheight + 1 = " + hr2);
+		 hrxhr2 = (hr*hr2);
+		 console.log("hr * hr2 = " + hrxhr2);
+		 height = Math.floor(hrxhr2+minHeight);
+		 console.log("the final height is " + height + " which is a random amount times (maxHeight-minHeight+1) plus the minHeight (" + hr +  " * " + hr2 + " ) +" + minHeight);
+		 minGap = 50;
+		 maxGap = 200;
+		 gr = Math.random();
+		 console.log("random gap number = " + gr);
+		 gr2 = (maxGap-minGap+1);
+		 console.log("maxGap = minGap + 1 = " + gr2);
+		 gap = Math.floor(gr*gr2+minGap);
+		 console.log("the final gap is " + gap + " which is a random amount times (maxGap-minGap+1) plus the minGap (" + gr +  " * " + gr2 + " ) +" + minGap);
+		 c2height = x - height - gap;
+		 console.log("the height of the 2nd bar is " +  c2height);
+		 console.log("the y placement of the 2nd bar is " + (height + gap));
+		 myObstacles.push(new component(10, height, "orange", x, 0));
+		 myObstacles.push(new component(10, x - height - gap, "blue", x, height + gap));
